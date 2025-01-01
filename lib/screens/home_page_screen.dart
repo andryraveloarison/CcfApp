@@ -58,19 +58,35 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           // Image centrée avec la hauteur calculée
-          Center(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: (screenHeight / 2 - 200).clamp(0.0, double.infinity)),
-              child: Image.asset(
-                'lib/assets/images/splash.png', // Remplacez par le chemin de votre image
-                width: 200,
-                height: 200,
-              ),
-            ),
+         Center(
+  child: Padding(
+    padding: EdgeInsets.only(
+      bottom: (screenHeight / 2 - 200).clamp(0.0, double.infinity),
+    ),
+    child: Column(
+      mainAxisSize: MainAxisSize.min, // Permet à la colonne de s'ajuster à la taille de son contenu
+      children: [
+        Image.asset(
+          'lib/assets/images/splash.png', // Remplacez par le chemin de votre image
+          width: 300,
+          height: 300,
+        ),
+        SizedBox(height: 10), // Espacement entre l'image et le texte
+        Text(
+          'v1.0.2', // Remplacez par le texte souhaité
+          style: TextStyle(
+            fontSize: 10, // Taille de la police
+            color: Colors.black, // Couleur du texte
           ),
+        ),
+      ],
+    ),
+  ),
+),
+
           // Texte en bas avec position absolue
           Positioned(
-            bottom: 10, // Distance du bas de l'écran
+            bottom: 5, // Distance du bas de l'écran
             left: 0,
             right: 0,
             child: Text(

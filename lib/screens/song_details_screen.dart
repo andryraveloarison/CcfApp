@@ -1,36 +1,37 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as services;
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:html/parser.dart' as html_parser;
 
 Future<String> loadSong(String songName) async {
   return await services.rootBundle.loadString('lib/lyrics/$songName.txt');
 }
 
-class SongDetailsScreen extends StatefulWidget {
+class SongDetailsScreen extends StatelessWidget {
   final String songName;
 
   const SongDetailsScreen({super.key, required this.songName});
 
-  @override
-  _SongDetailsScreenState createState() => _SongDetailsScreenState();
-}
+  List<TextSpan> parseLyrics(String lyrics) {
+    final document = html_parser.parse(lyrics);
+    final elements = document.body?.nodes ?? [];
 
-class _SongDetailsScreenState extends State<SongDetailsScreen> {
-  late WebViewController _webViewController;
-
-  @override
-  void initState() {
-    super.initState();
-    // Initialisation du WebView
-    WebView.platform = SurfaceAndroidWebView();
+    return elements.map((node) {
+      if (node.nodeType == 3) {
+        // Text Node
+        return TextSpan(text: node.text, style: const TextStyle(fontWeight: FontWeight.normal));
+      } else if (node.localName == 'b') {
+        // Bold Text Node
+        return TextSpan(text: node.text, style: const TextStyle(fontWeight: FontWeight.bold));
+      } else {
+        return const TextSpan(text: '');
+      }
+    }).toList();
   }
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<String>(
-      future: loadSong(widget.songName), // Charger les paroles depuis le fichier
+      future: loadSong(songName),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Scaffold(
@@ -44,23 +45,36 @@ class _SongDetailsScreenState extends State<SongDetailsScreen> {
           );
         }
 
-        final lyrics = snapshot.data ?? "";
+        final lyrics = snapshot.data ?? "Pas de paroles disponibles.";
 
         return Scaffold(
           appBar: AppBar(
-            title: Text(widget.songName),
+            title: Text(
+              songName,
+              style: const TextStyle(
+                fontSize: 19, // Taille de la police
+                fontWeight: FontWeight.bold, // Gras
+                color: Colors.black, // Couleur du texte
+                fontFamily: 'Roboto', // Exemple de police personnalisée
+              ),
+            ),
             backgroundColor: const Color(0xFFDF8700),
           ),
-          body: WebView(
-            initialUrl: Uri.dataFromString(
-              lyrics,
-              mimeType: 'text/html',
-              encoding: Encoding.getByName('utf-8'),
-            ).toString(),
-            javascriptMode: JavascriptMode.unrestricted,
-            onWebViewCreated: (WebViewController webViewController) {
-              _webViewController = webViewController;
-            },
+          body: Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Container(
+                width: double.infinity, // Utiliser toute la largeur disponible
+                child: RichText(
+                  textAlign: TextAlign.left, // Aligner le texte à gauche
+                  text: TextSpan(
+                    children: parseLyrics(lyrics),
+                    style: const TextStyle(color: Colors.black, fontSize: 16.0, height: 1.5),
+                  ),
+                ),
+              ),
+            ),
           ),
         );
       },

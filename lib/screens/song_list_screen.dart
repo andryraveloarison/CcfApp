@@ -11,9 +11,30 @@ class SongListScreen extends StatefulWidget {
 
 class _SongListScreenState extends State<SongListScreen> {
   final List<String> _songList = [
-    'face',
-    'recoit',
-    'je veux n\'etre qu\'a toi'
+    'Attire-moi à Toi',
+    'Au dessus de tout',
+    'Avec la foi',
+    'C\'est en Toi',
+    'Cherchez d\'abord le Royaume de Dieu',
+    'Dans ta main',
+    'Entends mon coeur',
+    'En Toi Seigneur',
+    'Face à Face',
+    'Il est exalté',
+    'Je loue Ton Nom Eternel',
+    'Jésus, c\'est le plus beau nom',
+    'Je veux n\'être qu\'à toi',
+    'Je veux t\'adorer',
+    'Le Seigneur nous a aimés',
+    'Les enfants de Dieu',
+    'Lumière du monde',
+    'Merci à Toi',
+    'Mon coeur ta demeure',
+    'Qu\'il en soit ainsi',
+    'Reçois l\'adoration',
+    'Tu es le chant',
+    'Tu est mon tout en tout',
+    'Un seul Dieu',  
     // Ajoutez d'autres chansons ici si nécessaire
   ];
 
@@ -51,7 +72,7 @@ class _SongListScreenState extends State<SongListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Liste des Chansons',
+          'Liste des chansons',
           style: TextStyle(
             fontFamily: 'Roboto', // Utilisation de la police Roboto
             fontWeight: FontWeight.bold, // Mettre le texte en gras
@@ -112,3 +133,4 @@ class _SongListScreenState extends State<SongListScreen> {
     );
   }
 }
+

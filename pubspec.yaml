@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
@@ -33,7 +33,7 @@ dependencies:
 
   sqflite: ^2.2.0
   path: ^1.8.3
-  webview_flutter: ^3.0.0
+  html: ^0.15.0
 
 
 
@@ -56,7 +56,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "lib/assets/images/1.png" # Remplacez ceci par le chemin de votre icône
+  image_path: "lib/assets/images/logo.png" # Remplacez ceci par le chemin de votre icône
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -74,9 +74,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - lib/assets/images/
-    - lib/lyrics/face.txt
-    - lib/lyrics/recoit.txt
-    - lib/lyrics/je veux n'etre qu'a toi.txt
+    - lib/lyrics/
 
   fonts:
       - family: Roboto
