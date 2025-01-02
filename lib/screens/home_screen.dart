@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:CCF/screens/song_list_screen.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeState createState() => _HomeState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeState extends State<Home> {
   late double screenHeight;
 
   @override
@@ -53,30 +53,35 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    final imageWidth = screenWidth.clamp(230.0,290.0); // Min 200, Max 300
+
     return Scaffold(
-      backgroundColor: const Color(0xFFdf8700), // Couleur personnalisée
+      backgroundColor: Color.fromARGB(255, 255, 182, 24), // Couleur personnalisée
       body: Stack(
         children: [
           // Image centrée avec la hauteur calculée
          Center(
-  child: Padding(
-    padding: EdgeInsets.only(
-      bottom: (screenHeight / 2 - 200).clamp(0.0, double.infinity),
-    ),
-    child: Column(
-      mainAxisSize: MainAxisSize.min, // Permet à la colonne de s'ajuster à la taille de son contenu
-      children: [
-        Image.asset(
-          'lib/assets/images/splash.png', // Remplacez par le chemin de votre image
-          width: 300,
-          height: 300,
-        ),
-        SizedBox(height: 10), // Espacement entre l'image et le texte
+          child: Padding(
+            padding: EdgeInsets.only(
+              bottom: (screenHeight / 2 - 220).clamp(0.0, double.infinity),
+            ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min, // Permet à la colonne de s'ajuster à la taille de son contenu
+          children: [
+            Image.asset(
+              'lib/assets/images/splash.png', // Remplacez par le chemin de votre image
+              width: imageWidth,
+              height: imageWidth,
+            ),
+        SizedBox(height: 1), // Espacement entre l'image et le texte
         Text(
-          'v1.0.2', // Remplacez par le texte souhaité
+          'v1.1.2', // Remplacez par le texte souhaité
           style: TextStyle(
-            fontSize: 10, // Taille de la police
-            color: Colors.black, // Couleur du texte
+            fontSize: 12, // Taille de la police
+            color: Color.fromARGB(255, 110, 110, 110), // Couleur du texte
           ),
         ),
       ],
@@ -90,7 +95,7 @@ class _HomePageState extends State<HomePage> {
             left: 0,
             right: 0,
             child: Text(
-              '©Nananjy', // Le texte à afficher en bas
+              'CCF © 2025', // Le texte à afficher en bas
               textAlign: TextAlign.center, // Centre le texte horizontalement
               style: const TextStyle(
                 fontSize: 11, // Taille du texte

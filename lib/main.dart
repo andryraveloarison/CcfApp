@@ -1,5 +1,5 @@
 import 'dart:io'; // Ajouter l'importation de dart:io pour utiliser Platform
-import 'package:CCF/screens/home_page_screen.dart';
+import 'package:CCF/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class ChoraleApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Chorale App',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomePage(), // Écran de liste des chansons
+      home: Home(), // Écran de liste des chansons
     );
   }
 }
