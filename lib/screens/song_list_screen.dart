@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'components/bottom_navigation_bar.dart';
 import 'song_details_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SongListScreen extends StatefulWidget {
   const SongListScreen({super.key});
@@ -62,12 +63,14 @@ class _SongListScreenState extends State<SongListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Liste des chansons',
-          style: TextStyle(
+        title: Text('Liste des chansons',
+          style: GoogleFonts.roboto(
+            fontSize: 22,
             fontWeight: FontWeight.bold
-          )
-          ,),
-        backgroundColor: const Color(0xFFDF8700),
+          ),
+          ),
+          centerTitle: true,
+        backgroundColor: Color(0xFFE28413),
         
       ),
       body: Column(
@@ -78,7 +81,7 @@ class _SongListScreenState extends State<SongListScreen> {
               decoration: InputDecoration(
                 hintText: 'Rechercher...',
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(15),
                 ),
               ),
               onChanged: _filterSongs,

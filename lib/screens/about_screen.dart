@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -18,6 +19,8 @@ class AboutScreen extends StatelessWidget {
             Navigator.pop(context); // Action pour revenir à la page précédente
           },
         ),
+        centerTitle: true,
+
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -45,8 +48,9 @@ class AboutScreen extends StatelessWidget {
                       child: Text(
                         'CCF est une application dédiée aux membres du Chœur du Christ en Famille.\n\n'
                         'Elle permet d\'afficher les paroles des chansons chantées lors des cultes, des répétitions ou des événements spéciaux.\n\n',
-                        style: const TextStyle(
-                          fontSize: 15,
+                        style: GoogleFonts.nunito(
+                          color: Colors.black,
+                          fontSize: 15
                         ),
                         textAlign: TextAlign.center, // Centrer le texte horizontalement
                       ),

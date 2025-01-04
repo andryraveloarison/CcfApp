@@ -56,10 +56,10 @@ class _HomeState extends State<Home> {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    final imageWidth = screenWidth.clamp(230.0,290.0); // Min 200, Max 300
+    final imageWidth = screenWidth.clamp(230.0,290.0); // Min 200, Max 3R00
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 182, 24), // Couleur personnalisée
+      backgroundColor: Color(0xFFE28413), // Couleur personnalisée
       body: Stack(
         children: [
           // Image centrée avec la hauteur calculée
@@ -81,7 +81,7 @@ class _HomeState extends State<Home> {
           'v1.1.3', // Remplacez par le texte souhaité
           style: TextStyle(
             fontSize: 12, // Taille de la police
-            color: Color.fromARGB(255, 110, 110, 110), // Couleur du texte
+            color: Color.fromARGB(255, 83, 83, 83), // Couleur du texte
           ),
         ),
       ],
@@ -99,7 +99,7 @@ class _HomeState extends State<Home> {
               textAlign: TextAlign.center, // Centre le texte horizontalement
               style: const TextStyle(
                 fontSize: 11, // Taille du texte
-                color: Colors.black, // Couleur du texte
+                color: Color(0XFF000022), // Couleur du texte
                 fontFamily: 'Roboto',
               ),
             ),

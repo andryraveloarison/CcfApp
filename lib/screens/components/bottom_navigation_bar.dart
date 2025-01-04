@@ -14,7 +14,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: currentIndex, // Ajouter le currentIndex ici
-      backgroundColor: const Color(0xFFDF8700), // Couleur de fond
+      backgroundColor: Color(0xFFE28413), // Couleur de fond
       selectedItemColor: Colors.white, // Couleur pour l'élément sélectionné
       unselectedItemColor: Color.fromARGB(255, 0, 0, 0), // Couleur pour les éléments non sélectionnés
       type: BottomNavigationBarType.fixed, // Comportement uniforme
