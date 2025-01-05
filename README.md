@@ -1,17 +1,6 @@
-# flutter_application_1
+# CCF App
 
-A new Flutter project.
+CCF est une application dédiée aux membres du Chœur du Christ en Famille.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# CcfApp
+Elle permet d'afficher les paroles des chansons chantées lors des cultes, des répétitions ou des événements spéciaux.
+                        

@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
     final imageWidth = screenWidth.clamp(230.0,290.0); // Min 200, Max 3R00
 
     return Scaffold(
-      backgroundColor: Color(0xFFE28413), // Couleur personnalisée
+      backgroundColor: Color.fromARGB(255, 255, 182, 24), // Couleur personnalisée
       body: Stack(
         children: [
           // Image centrée avec la hauteur calculée

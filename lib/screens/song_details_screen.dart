@@ -52,7 +52,7 @@ class SongDetailsScreen extends StatelessWidget {
             title: Text(
               songName,
               style: const TextStyle(
-                fontSize: 17, // Taille de la police
+                fontSize: 22, // Taille de la police
                 fontWeight: FontWeight.bold, // Gras
                 color: Colors.black, // Couleur du texte
                 fontFamily: 'Roboto', // Exemple de police personnalisée

@@ -10,7 +10,8 @@ class AboutScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('À propos',
          style: TextStyle(
-            fontWeight: FontWeight.bold
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
           )),
         backgroundColor: const Color(0xFFDF8700),
         leading: IconButton(
