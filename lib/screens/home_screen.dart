@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
             ),
         SizedBox(height: 1), // Espacement entre l'image et le texte
         Text(
-          'v1.1.3', // Remplacez par le texte souhaité
+          'v1.1.4', // Remplacez par le texte souhaité
           style: TextStyle(
             fontSize: 12, // Taille de la police
             color: Color.fromARGB(255, 83, 83, 83), // Couleur du texte
