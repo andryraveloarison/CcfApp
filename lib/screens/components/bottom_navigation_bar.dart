@@ -21,7 +21,6 @@ class BottomNavigationBarWidget extends StatelessWidget {
       showUnselectedLabels: false, // Masquer les labels non sélectionnés
       showSelectedLabels: false, // Masquer les labels sélectionnés
       onTap: (index) {
-        // Si l'utilisateur est déjà sur la page actuelle, ne rien faire
         if (index == currentIndex) return;
 
         if (index == 0) {
@@ -39,11 +38,11 @@ class BottomNavigationBarWidget extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.music_note),
-          label: '', // Label vide
+          label: '', 
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.info),
-          label: '', // Label vide
+          label: '', 
         ),
       ],
     );
