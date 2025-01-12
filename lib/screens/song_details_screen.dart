@@ -41,7 +41,7 @@ class SongDetailsScreen extends StatelessWidget {
 
         if (snapshot.hasError) {
           return Scaffold(
-            body: Center(child: Text('Erreur de chargement des paroles')),
+            body: Center(child: Text('Erreur de chargement des paroles.')),
           );
         }
 
