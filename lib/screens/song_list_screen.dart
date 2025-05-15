@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'components/bottom_navigation_bar.dart';
 import 'song_details_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,7 +17,7 @@ class _SongListScreenState extends State<SongListScreen> {
     'Avec la foi',
     'C\'est en Toi',
     'Cherchez d\'abord le Royaume de Dieu',
-    'Dans ta main',
+    'Dans Ta main',
     'Entends mon coeur',
     'En Toi Seigneur',
     'Face à Face',
@@ -31,12 +30,16 @@ class _SongListScreenState extends State<SongListScreen> {
     'Les enfants de Dieu',
     'Lumière du monde',
     'Merci à Toi',
-    'Mon coeur ta demeure',
+    'Mon coeur Ta demeure',
     'Qu\'il en soit ainsi',
     'Reçois l\'adoration',
     'Tu es le chant',
     'Tu est mon tout en tout',
     'Un seul Dieu',
+    'C\'est l\'air que je respire',
+    'Louez, louez Gloire à Jésus',
+    'Oui règne en moi',
+    'Tout va bien'
   ];
 
   List<String> _filteredSongs = [];
